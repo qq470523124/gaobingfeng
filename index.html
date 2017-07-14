@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body{
+				perspective: 500px;
+			}
+			
+			#main{
+				
+				width: 200px;
+				height: 200px;
+				margin: 0 auto;
+				position: relative;
+				margin-top: 200px;
+				transition: all 1s; 
+				transform-style: preserve-3d;
+			}
+			
+			@keyframes a1{
+				from{transform: rotateX(0deg) rotateY(0deg);}
+				to{transform:rotateX(0deg) rotateY(0deg);}
+			}
+			
+			#main div{
+				
+				display: block;
+				width: 200px;
+				height: 200px;
+				background-size: 100% 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0.6;
+				
+				
+			}
+			.front{
+				background-image: url(img/6.png);
+				transform: translateZ(100px);
+				
+				
+			}
+			.back{
+				background-image: url(img/1.png);
+				transform: rotateY(180deg) translateZ(100px);
+			}
+			.left{
+				background-image: url(img/2.png);
+				transform: rotateY(-90deg) translateZ(100px);
+			}
+			.right{
+				background-image: url(img/3.png);
+				transform: rotateY(90deg) translateZ(100px);
+			}
+			.top{
+				background-image: url(img/4.png);
+				transform: rotateX(90deg)translateZ(100px);
+			}
+			.bottom{
+				background-image: url(img/5.png);
+				transform: rotateX(-90deg)translateZ(100px);
+			}
+		
+			
+			#sz1:checked ~#out #main{
+				transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+			}
+			#sz2:checked ~#out #main{
+				transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+			}
+			#sz3:checked ~#out #main{
+				transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);
+			}
+			#sz4:checked ~#out #main{
+				transform: rotateX(0deg) rotateY(-90deg) rotateZ(0deg);
+			}
+			#sz5:checked ~#out #main{
+				transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+			}
+			#sz6:checked ~#out #main{
+				transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+			}
+			#sz7:checked ~#out #main{
+				transform: scale(2);
+			}
+			
+			label{
+				display:inline-block;
+
+				width: 100px;
+				height: 50px;
+				background: pink;
+				border-radius: 20px;
+				color: white;
+				text-align: center;
+				line-height: 50px;
+				
+			}
+			input{
+				display: none;
+			}
+			
+		</style>
+	</head>
+	<body>	
+		<label for="sz1" id="sz11">正面</label>
+		<label for="sz2" id="sz12">背面</label>
+		<label for="sz3" id="sz13">左面</label>
+		<label for="sz4" id="sz14">右面</label>
+		<label for="sz5" id="sz15">上面</label>
+		<label for="sz6" id="sz16">下面</label>
+		<label for="sz7" id="sz17">放大</label>
+		
+		<input type="radio" name="sz" id="sz1" value=""/>
+		<input type="radio" name="sz" id="sz2" value=""/>
+		<input type="radio" name="sz" id="sz3" value=""/>
+		<input type="radio" name="sz" id="sz4" value=""/>
+		<input type="radio" name="sz" id="sz5" value=""/>
+		<input type="radio" name="sz" id="sz6" value=""/>
+		<input type="radio" name="sz" id="sz7" value=""/>
+	
+	
+		
+		
+		<div id="out">
+			<div id="main">
+				<div class="front"></div>
+				<div class="back"></div>
+				<div class="left"></div>
+				<div class="right"></div>
+				<div class="top"></div>
+				<div class="bottom"></div>
+			</div>
+		</div>
+	</body>
+</html>
